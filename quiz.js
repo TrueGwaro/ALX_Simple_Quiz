@@ -1,6 +1,5 @@
-// Function to check the user's answer
 function checkAnswer() {
-    const correctAnswer = "4"; // Correct answer
+    const correctAnswer = "4";
     const selectedOption = document.querySelector('input[name="quiz"]:checked');
     const feedback = document.getElementById('feedback');
 
@@ -8,16 +7,10 @@ function checkAnswer() {
         const userAnswer = selectedOption.value;
         if (userAnswer === correctAnswer) {
             feedback.textContent = "Correct! Well done.";
-            feedback.style.color = "#28a745"; // green
         } else {
             feedback.textContent = "That's incorrect. Try again!";
-            feedback.style.color = "#dc3545"; // red
         }
-    } else {
-        feedback.textContent = "Please select an answer before submitting.";
-        feedback.style.color = "#dc3545"; // red
     }
 }
 
-// Add event listener to the submit button
 document.getElementById('submit-answer').addEventListener('click', checkAnswer);
